@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Kornelia Czekaj: wdrożenia AI, voiceboty, automatyzacje n8n, aplikacje na wydarzenia i oprogramowanie na zamówienie.">
+<style>html,body{margin:0}img{max-width:100%}</style>
+<title>Kornelia Czekaj · Portfolio</title>
+</head>
+<body>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap">
+<style>
+/* Wariant C, "Studio": B2B design studio. Off-white and near-black, one big-type sentence
+   as the hero, case cards "Klient / zdanie" with tags, capability columns, scoreboard footer. */
+:root {
+  color-scheme: light;
+  --paper: #F3F3F0;
+  --ink: #18191A;
+  --muted: #757471;
+  --line: #D6D5D1;
+  --card: #E8E7E2;
+  --beige: #E6DCCB;
+  --blue: #CBD8E6;
+  --sans: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+  --gutter: clamp(16px, 3vw, 40px);
+}
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 1.0625rem; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+p, h1, h2, h3 { margin: 0; }
+h1, h2, h3 { font-weight: 500; text-wrap: balance; letter-spacing: -0.03em; }
+a { color: inherit; text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+img { display: block; max-width: 100%; height: auto; }
+.page { padding-inline: var(--gutter); max-width: 1440px; margin-inline: auto; }
+.lbl { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+.todo { border-bottom: 1px dashed currentColor; color: #9A5B2E; }
+
+header.top { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-block: 20px; }
+header.top .logo { font-weight: 700; letter-spacing: -0.02em; font-size: 1.15rem; }
+header.top nav { display: flex; gap: 6px; }
+header.top nav a { text-decoration: none; padding: 7px 14px; border-radius: 999px; background: var(--card); font-size: 0.9rem; }
+header.top nav a.cta { background: var(--ink); color: var(--paper); }
+
+.hero { padding-block: clamp(40px, 8vw, 120px) clamp(48px, 7vw, 96px); }
+.hero h1 { font-size: clamp(2.3rem, 5.8vw, 5.6rem); line-height: 1.02; max-width: 20ch; }
+.hero h1 .dim { color: var(--muted); }
+.hero .row { display: flex; gap: 14px; align-items: center; margin-top: 32px; flex-wrap: wrap; }
+.pill { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; background: var(--card); font-size: 0.92rem; }
+.pill i { width: 8px; height: 8px; border-radius: 50%; background: #3BA55C; }
+
+.roster { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding-block: 22px; display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 24px; align-items: center; margin-bottom: clamp(56px, 8vw, 104px); }
+.roster p { color: var(--muted); font-size: 0.95rem; }
+.roster ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px 36px; font-size: clamp(1.2rem, 2vw, 1.6rem); font-weight: 600; letter-spacing: -0.02em; }
+
+.sec { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px; gap: 16px; }
+.sec h2 { font-size: clamp(2rem, 4vw, 3.2rem); }
+.sec h2 span { color: var(--muted); }
+
+.cases { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gutter); margin-bottom: clamp(64px, 9vw, 120px); }
+.case { display: grid; gap: 14px; align-content: start; min-width: 0; }
+.case .vis { border-radius: 14px; overflow: hidden; aspect-ratio: 16 / 11; display: flex; align-items: flex-end; justify-content: center; gap: 12px; padding: 32px 24px 0; max-width: 100%; }
+.case .vis img.ph { width: 30%; border-radius: 14px 14px 0 0; box-shadow: 0 20px 40px -22px rgba(0,0,0,.5); }
+.case .vis.full { padding: 24px; align-items: center; }
+.case .vis.full img { width: 100%; border-radius: 8px; box-shadow: 0 20px 40px -26px rgba(0,0,0,.5); }
+.case h3 { font-size: clamp(1.25rem, 1.9vw, 1.55rem); line-height: 1.25; }
+.case h3 b { font-weight: 600; }
+.case h3 span { color: var(--muted); }
+.tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.tags span { font-size: 0.82rem; padding: 4px 10px; border-radius: 999px; background: var(--card); }
+.tags .todo { border: 1px dashed #9A5B2E; background: transparent; }
+.case.wide { grid-column: 1 / -1; }
+.case.wide .vis { aspect-ratio: auto; background: var(--ink); flex-direction: column; align-items: center; padding: clamp(24px, 4vw, 48px) clamp(16px, 3vw, 40px); }
+
+.pipe { list-style: none; margin: 0 0 18px; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; counter-reset: st; }
+.pipe li { background: #2B2C2C; color: #F3F3F0; border-radius: 12px; padding: 12px 14px; display: grid; gap: 2px; position: relative; }
+.pipe li b { font-weight: 600; font-size: 1.05rem; }
+.pipe li span { font-size: 0.82rem; color: #A9A8A4; line-height: 1.35; }
+.pipe li:not(:last-child)::after { content: ""; position: absolute; right: -5px; top: 50%; width: 7px; height: 7px; border-top: 2px solid #CBD8E6; border-right: 2px solid #CBD8E6; transform: translate(50%, -50%) rotate(45deg); }
+@media (max-width: 520px) { .pipe { grid-template-columns: minmax(0, 1fr); } .pipe li:not(:last-child)::after { right: 50%; top: auto; bottom: -5px; transform: translate(50%, 50%) rotate(135deg); } }
+.dialog { display: grid !important; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: clamp(24px, 4vw, 56px); align-items: start; }
+.talk { display: grid; gap: 12px; position: sticky; top: 24px; }
+.arch { display: grid; gap: 14px; min-width: 0; }
+.flowv { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+.flowv > li { display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 14px; position: relative; padding-bottom: 18px; }
+.flowv > li::before { content: ""; position: absolute; left: 13px; top: 28px; bottom: 0; width: 2px; background: #3A3B3D; }
+.flowv > li:last-child::before { display: none; }
+.flowv > li > i { font-style: normal; font-size: 0.78rem; font-weight: 700; width: 28px; height: 28px; border-radius: 50%; background: #CBD8E6; color: #18191A; display: grid; place-items: center; position: relative; z-index: 1; }
+.flowv > li > div { background: #2B2C2C; color: #F3F3F0; border-radius: 12px; padding: 12px 16px; display: grid; gap: 4px; }
+.flowv > li > div > b { font-weight: 600; font-size: 1.02rem; }
+.flowv span { font-size: 0.86rem; color: #A9A8A4; line-height: 1.4; }
+.flowv .side { font-size: 0.82rem; color: #C9C8C4; line-height: 1.4; margin-top: 6px; padding-left: 10px; border-left: 2px solid #5A5B5D; }
+.flowv .side em { font-style: normal; font-weight: 600; color: #F3F3F0; margin-right: 4px; }
+.flowv .bot > div { background: #CBD8E6; color: #18191A; gap: 10px; }
+.flowv .bot .sub { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+.flowv .bot .sub p { background: #F3F3F0; border-radius: 9px; padding: 8px 10px; font-size: 0.8rem; color: #4A4B4D; line-height: 1.35; display: grid; gap: 2px; }
+.flowv .bot .sub b { color: #18191A; font-size: 0.92rem; }
+.flowv .bot .uses { font-size: 0.82rem; color: #4A4B4D; }
+.flowv .bot .uses em { font-style: normal; display: inline-block; background: #F3F3F0; border-radius: 999px; padding: 2px 9px; margin: 3px 3px 0 0; color: #18191A; }
+.flowv .bot .side { color: #3A3B3D; border-left-color: #8FA3B8; margin-top: 0; }
+.flowv .bot .side em { color: #18191A; }
+.flowv .green > div { background: #22382C; }
+.flowv .loop > div { background: transparent; border: 1px dashed #5A5B5D; }
+@media (max-width: 860px) { .dialog { grid-template-columns: minmax(0, 1fr); } .talk { position: static; } }
+@media (max-width: 520px) { .flowv .bot .sub { grid-template-columns: minmax(0, 1fr); } }
+.dialog { width: 100%; max-width: 1080px; display: grid; gap: 12px; padding-block: 8px; }
+.d-cap { color: #A9A8A4; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+.d { max-width: min(82%, 540px); padding: 12px 16px; border-radius: 16px; font-size: clamp(0.95rem, 1.6vw, 1.12rem); line-height: 1.4; display: grid; gap: 2px; }
+.d span { font-size: 0.75rem; opacity: 0.65; }
+.d.u { background: #2B2C2C; color: #F3F3F0; justify-self: start; border-bottom-left-radius: 4px; }
+.d.m { background: #CBD8E6; color: #18191A; justify-self: end; border-bottom-right-radius: 4px; }
+.about { border-top: 1px solid var(--ink); padding-block: 22px clamp(56px, 8vw, 104px); display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 24px; }
+.about-t { font-size: clamp(1.4rem, 2.6vw, 2.2rem); line-height: 1.2; letter-spacing: -0.02em; font-weight: 500; max-width: 32ch; }
+.about-t span { color: var(--muted); }
+@media (max-width: 860px) { .about { grid-template-columns: minmax(0, 1fr); } }
+.caps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gutter); margin-bottom: clamp(64px, 9vw, 120px); }
+.cap { background: var(--card); border-radius: 14px; padding: clamp(22px, 3vw, 36px); display: grid; gap: 16px; align-content: start; }
+.cap h3 { font-size: 1.7rem; }
+.cap p { color: var(--muted); }
+.cap ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 0; }
+.cap li { padding-block: 10px; border-top: 1px solid var(--line); }
+
+.close { padding-block: clamp(48px, 8vw, 104px); border-top: 1px solid var(--ink); display: grid; gap: 28px; }
+.close h2 { font-size: clamp(2.6rem, 8vw, 7rem); line-height: 0.95; }
+.close dl { margin: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+.close dt { color: var(--muted); font-size: 0.9rem; }
+.close dd { margin: 0; font-weight: 500; overflow-wrap: anywhere; }
+
+.stats { background: var(--ink); color: var(--paper); margin-inline: calc(var(--gutter) * -1); padding: 26px var(--gutter); display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 18px; }
+.stats div { display: grid; gap: 2px; }
+.stats b { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 600; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+.stats span { font-size: 0.82rem; color: #A9A8A4; }
+
+@media (max-width: 860px) {
+  .cases, .caps { grid-template-columns: minmax(0, 1fr); }
+  .caps .cap.culture { order: -1; }
+  .case.wide .vis { aspect-ratio: auto; }
+  .roster { grid-template-columns: minmax(0, 1fr); }
+  .close dl { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 520px) { header.top nav a:not(.cta) { display: none; } }
+</style>
+
+<div class="page">
+  <header class="top">
+    <span class="logo">kornelia czekaj</span>
+    <nav aria-label="Sekcje"><a href="#prace">Prace</a><a href="#uslugi">Usługi</a><a class="cta" href="#kontakt">Kontakt</a></nav>
+  </header>
+
+  <section class="hero">
+    <h1>Wdrażam AI w firmach: od voicebotów po gotowe aplikacje. <span class="dim">Od pomysłu do działającego wdrożenia.</span></h1>
+    <div class="row"><span class="pill"><i></i>Otwarta na zlecenia i etat zdalny</span><span class="pill">Pracuję zdalnie · cała Polska</span><span class="pill">Senior AI Solution Specialist</span></div>
+  </section>
+
+  <div class="roster">
+    <p>Klienci, dla których zrealizowałam projekty.</p>
+    <ul><li>Sieć sklepów internetowych</li><li>Dusy Professional</li><li>Stowarzyszenie „Kęszyca Leśna Sobie i Sąsiadom”</li></ul>
+  </div>
+
+  <div class="sec" id="prace"><h2>Wybrane <span>projekty</span></h2></div>
+  <div class="cases">
+    <article class="case">
+      <div class="vis" style="background:#D5E2CF"><img class="ph" src="img/keszyca-start.jpg" alt="Ekran startowy aplikacji Dnia Kultury" width="540" height="1169" loading="lazy"><img class="ph" src="img/keszyca-program.jpg" alt="Program wydarzenia" width="540" height="1169" loading="lazy"><img class="ph" src="img/keszyca-dojazd.jpg" alt="Mapa i dojazd" width="540" height="1169" loading="lazy"></div>
+      <h3><b>Dzień Kultury w Kęszycy Leśnej</b> <span>/ aplikacja mobilna wydarzenia dla stowarzyszenia „Kęszyca Leśna Sobie i Sąsiadom”, otwierana kodem QR z plakatu</span></h3>
+      <div class="tags"><span>Wydarzenie</span><span>Działa offline</span></div>
+    </article>
+    <article class="case">
+      <div class="vis" style="background:var(--beige)"><img class="ph" src="img/dusy-home.jpg" alt="Panel klientki DusyApp" width="540" height="1168" loading="lazy"><img class="ph" src="img/dusy-tryon.jpg" alt="Przymiarka fryzury AI" width="540" height="1168" loading="lazy"><img class="ph" src="img/dusy-fryzjer.jpg" alt="Panel fryzjera" width="540" height="1168" loading="lazy"></div>
+      <h3><b>Dusy Professional</b> <span>/ aplikacja salonu: rezerwacja wizyt, doradca AI i wirtualna przymiarka fryzury</span></h3>
+      <div class="tags"><span>Salon</span><span>Kalendarz Google</span><span>Wdrożona u klienta</span></div>
+    </article>
+    <article class="case wide">
+      <div class="vis">
+        <div class="dialog">
+          <div class="arch" aria-label="Schemat działania voicebota i panelu, uproszczony">
+            <p class="d-cap">Jak działa voicebot i panel · schemat uproszczony</p>
+            <ol class="flowv">
+              <li><i>1</i><div><b>Klient dzwoni</b><span>na infolinię sklepu</span></div></li>
+              <li><i>2</i><div><b>Centrala telefoniczna</b><span>przekazuje rozmowę botowi</span>
+                <p class="side"><em>Awaryjnie</em> gdy bot nie działa, klient trafia od razu do konsultanta</p></div></li>
+              <li class="bot"><i>3</i><div><b>Voicebot</b>
+                <div class="sub"><p><b>Słuch</b> mowa na tekst</p><p><b>Mózg</b> model AI rozumie i układa odpowiedź</p><p><b>Głos</b> tekst na mowę</p></div>
+                <p class="uses">Mózg korzysta z: <em>instrukcji</em> <em>bazy wiedzy</em> <em>gotowych wypowiedzi</em> <em>narzędzi</em></p>
+                <p class="side"><em>Narzędzia</em> sprawdzają status zamówienia, zwrotu i reklamacji</p>
+                <p class="side"><em>Konsultant</em> przejmuje rozmowę, gdy bot nie może pomóc</p></div></li>
+              <li><i>4</i><div><b>Po rozmowie</b><span>zapisują się transkrypcja z oceną AI, nagranie i szczegółowy log</span></div></li>
+              <li class="green"><i>5</i><div><b>Panel analityczny</b><span>historia rozmów, analiza i raporty, ustawienia botów, testy przed zmianą</span>
+                <p class="side"><em>Monitoring</em> co kilka minut sprawdza boty i wysyła alert</p></div></li>
+              <li class="loop"><i>6</i><div><b>Zmiany wracają do bota</b><span>prompt i baza wiedzy działają od następnej rozmowy</span></div></li>
+            </ol>
+          </div>
+          <div class="talk">
+          <p class="d-cap">Przykładowa rozmowa</p>
+          <p class="d u"><span>Klient</span>Chciałbym sprawdzić, gdzie jest moja paczka.</p>
+          <p class="d m"><span>Marcin</span>Jaki jest numer zamówienia?</p>
+          <p class="d u"><span>Klient</span>Cztery, osiem, dwa, jeden, zero, siedem.</p>
+          <p class="d m"><span>Marcin</span>Dziękuję. Zamówienie zostało dziś wysłane. Kurier doręczy je jutro.</p>
+          </div>
+        </div>
+      </div>
+      <h3><b>Marcin, wirtualny asystent</b> <span>/ voicebot obsługujący infolinie sklepów internetowych w 29 wariantach, zbudowany w dwuosobowym zespole ze specjalistą IT. Odpowiadam za część merytoryczną, testy i raportowanie, a architekturę rozwiązania znam od strony technicznej. Rozwiązanie zewnętrznego dostawcy osiągało ok. 27% skuteczności; zarekomendowałam budowę własnych systemów, które dziś osiągają 76–86% skuteczności, a ok. 40% spraw zamyka się w całości w trakcie rozmowy.</span></h3>
+      <div class="tags"><span>Voiceboty</span><span>LiveKit</span><span>Część merytoryczna</span><span>Testy i raporty</span></div>
+    </article>
+    <article class="case">
+      <div class="vis full" style="background:#F2DCCF"><img src="img/n8n-maile.jpg" alt="Workflow n8n: odpowiedzi na maile" width="1400" height="937" loading="lazy"></div>
+      <h3><b>Odpowiedzi na maile</b> <span>/ AI klasyfikuje wiadomości, odpowiada na typowe zapytania, a sprawy wymagające decyzji przekazuje pracownikowi. Na co dzień utrzymuję i rozwijam automatyzację n8n obsługującą 11 rynków.</span></h3>
+      <div class="tags"><span>n8n</span><span>Gmail</span><span>Projekt demonstracyjny</span></div>
+    </article>
+    <article class="case">
+      <div class="vis full" style="background:var(--blue)"><img src="img/pyverse-editor.jpg" alt="Edytor PyVerse" width="1200" height="750" loading="lazy"></div>
+      <h3><b>PyVerse</b> <span>/ oprogramowanie dedykowane do pisania książek i poezji, z eksportem w formacie wydawniczym</span></h3>
+      <div class="tags"><span>Oprogramowanie dedykowane</span><span>iPhone i iPad</span></div>
+    </article>
+    <article class="case">
+      <div class="vis full" style="background:#DDDCE6"><img src="img/handbook.jpg" alt="Strona podręcznika o voicebotach" width="1200" height="750" loading="lazy"></div>
+      <h3><b>Voicebot Specialist Handbook</b> <span>/ autorski podręcznik: 17 bloków tematycznych opisujących problematykę tworzenia voicebotów, z asystentem AI odpowiadającym na podstawie treści</span></h3>
+      <div class="tags"><span>17 bloków tematycznych</span><span><a href="https://github.com/korneliaczekaj-pixel/voicebot-handbook" target="_blank" rel="noopener">GitHub</a></span></div>
+    </article>
+  </div>
+
+  <section class="about" id="o-mnie">
+    <p class="lbl">O mnie</p>
+    <p class="about-t">Z wykształcenia jestem AI Product Managerką i historyczką sztuki. Przez siedem lat prowadziłam wegańską restaurację The ROOT we Wrocławiu. <span>Znam codzienność małej firmy od środka, dlatego wiem, które procesy warto zautomatyzować, żeby właściciel miał więcej czasu dla klientów.</span></p>
+  </section>
+
+  <div class="sec" id="uslugi"><h2>Zakres <span>usług</span></h2></div>
+  <div class="caps">
+    <div class="cap culture"><span class="lbl">Kultura</span><h3>Technologia dla galerii i instytucji kultury</h3><p>Łączę wykształcenie historyczki sztuki z wdrażaniem AI.</p><ul><li>Przewodniki i asystenci AI dla zwiedzających</li><li>Aplikacje wystaw, festiwali i wydarzeń kulturalnych</li><li>Porządkowanie i opis zbiorów z pomocą AI</li><li>Strony i automatyzacje dla instytucji kultury</li></ul></div>
+    <div class="cap"><span class="lbl">Wydarzenia i agencje</span><h3>Rozwiązania cyfrowe dla wydarzeń i kampanii</h3><p>Realizacja w krótkim terminie, zgodna z identyfikacją wizualną wydarzenia lub marki.</p><ul><li>Aplikacje mobilne wydarzeń z dostępem przez kod QR</li><li>Strony internetowe wydarzeń i kampanii</li><li>Oprogramowanie dedykowane</li><li>Uruchomienie i wsparcie na start dla małych organizatorów</li></ul></div>
+    <div class="cap"><span class="lbl">Małe i średnie firmy</span><h3>Automatyzacja kanałów kontaktu z klientem</h3><p>AI obsługuje powtarzalne procesy i zapytania klientów, a sprawy wymagające decyzji trafiają do pracownika. Sama prowadziłam małą firmę, więc znam te potrzeby z praktyki.</p><ul><li>Voiceboty i czatboty obsługujące infolinię i stronę</li><li>Rezerwacje stolików i odpowiedzi na pytania gości w restauracjach i kawiarniach</li><li>Rezerwacja wizyt przez czat z integracją kalendarza</li><li>Automatyczna obsługa poczty e-mail (n8n)</li><li>Współpraca z działem IT klienta, a w małych firmach uruchomienie i wsparcie na start</li></ul></div>
+  </div>
+
+  <section class="close" id="kontakt">
+    <h2>Porozmawiajmy o współpracy.</h2>
+    <dl>
+      <div><dt>E-mail</dt><dd><span style="user-select:all">kornelia.czekaj@gmail.com</span></dd></div>
+      <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/kornelia-czekaj/" target="_blank" rel="noopener">kornelia-czekaj</a></dd></div>
+      <div><dt>GitHub</dt><dd><a href="https://github.com/korneliaczekaj-pixel" target="_blank" rel="noopener">korneliaczekaj-pixel</a></dd></div>
+      <div><dt>CV</dt><dd><a href="Kornelia_Czekaj_CV.pdf" target="_blank" rel="noopener">Kornelia_Czekaj_CV.pdf</a></dd></div>
+    </dl>
+  </section>
+
+  <div class="stats">
+    <div><b>29</b><span>voicebotów zbudowanych w dwuosobowym zespole</span></div>
+    <div><b>17</b><span>bloków tematycznych o tworzeniu voicebotów</span></div>
+    <div><b>76–86%</b><span>skuteczności voicebotów (wcześniej ok. 27%)</span></div>
+    <div><b>11</b><span>rynków obsługiwanych przez automatyzację n8n</span></div>
+    <div><b>© 2026</b><span>Strefa Twórcza</span></div>
+  </div>
+</div>
+
+</body>
+</html>
