@@ -72,6 +72,10 @@ header.top nav a.cta { background: var(--ink); color: var(--paper); }
 .tags span { font-size: 0.82rem; padding: 4px 10px; border-radius: 999px; background: var(--card); }
 .tags .todo { border: 1px dashed #9A5B2E; background: transparent; }
 .case.wide { grid-column: 1 / -1; }
+.wpanel { width: 100%; max-width: 1080px; display: grid; gap: 12px; margin-top: clamp(24px, 3vw, 40px); padding-top: clamp(20px, 3vw, 32px); border-top: 1px solid #3A3B3D; }
+.wshots { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(10px, 2vw, 20px); }
+.wshots img { width: 100%; border-radius: 12px; border: 1px solid #3A3B3D; }
+@media (max-width: 520px) { .wshots { grid-template-columns: minmax(0, 1fr); max-width: 320px; margin-inline: auto; } }
 .case.wide .vis { aspect-ratio: auto; background: var(--ink); flex-direction: column; align-items: center; padding: clamp(24px, 4vw, 48px) clamp(16px, 3vw, 40px); }
 
 .pipe { list-style: none; margin: 0 0 18px; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; counter-reset: st; }
@@ -203,6 +207,40 @@ header.top nav a.cta { background: var(--ink); color: var(--paper); }
       </div>
       <h3><b>Marcin, wirtualny asystent</b> <span>/ voicebot obsługujący infolinie sklepów internetowych w 29 wariantach, zbudowany w dwuosobowym zespole ze specjalistą IT. Odpowiadam za część merytoryczną, testy i raportowanie, a architekturę rozwiązania znam od strony technicznej. Rozwiązanie zewnętrznego dostawcy osiągało ok. 27% skuteczności; zarekomendowałam budowę własnych systemów, które dziś osiągają 76–86% skuteczności, a ok. 40% spraw zamyka się w całości w trakcie rozmowy.</span></h3>
       <div class="tags"><span>Voiceboty</span><span>LiveKit</span><span>Część merytoryczna</span><span>Testy i raporty</span></div>
+    </article>
+    <article class="case wide" id="wanda">
+      <div class="vis">
+        <div class="dialog">
+          <div class="arch" aria-label="Schemat działania Wirtualnej Wandy, uproszczony">
+            <p class="d-cap">Jak działa Wanda · schemat uproszczony</p>
+            <ol class="flowv">
+              <li><i>1</i><div><b>Ktoś dzwoni na mój numer</b><span>połączenie trafia najpierw do Wandy</span></div></li>
+              <li class="bot"><i>2</i><div><b>Wanda odbiera</b>
+                <div class="sub"><p><b>Kto?</b> rozpoznaje bliskich po numerze, pozostałych pyta</p><p><b>Po co?</b> ustala, w jakiej sprawie jest telefon</p><p><b>Jak?</b> dobiera ton rozmowy do rozmówcy</p></div>
+                <p class="side"><em>Po 21:00</em> mówi, że jest późno, i pyta, czy sprawa jest na tyle pilna, żeby mnie budzić</p></div></li>
+              <li><i>3</i><div><b>Reklama lub bot</b><span>Wanda grzecznie kończy rozmowę, nie przełącza</span></div></li>
+              <li class="green"><i>4</i><div><b>Rodzina, znajomi, kurierzy, rekruterzy</b><span>Wanda przełącza do mnie, mówi, kiedy będę dostępna, albo przyjmuje wiadomość</span></div></li>
+              <li><i>5</i><div><b>Wanda sama dzwoni do mnie</b><span>gdy pojawi się nowe ogłoszenie, które mnie interesuje, Wanda dzwoni z krótką informacją: „Halo, tu Wanda”</span></div></li>
+              <li class="loop"><i>6</i><div><b>Panel Wandy</b><span>budżet, historia połączeń z zapisem rozmów, powitania, zasady, głos i model AI; zmiany działają od następnego połączenia</span></div></li>
+            </ol>
+          </div>
+          <div class="talk">
+          <p class="d-cap">Przykładowa rozmowa</p>
+          <p class="d m"><span>Wanda</span>Dzień dobry, tu Wirtualna Wanda, asystentka AI Kornelii. Proszę powiedzieć, kto dzwoni i w jakiej sprawie, a sprawdzę, czy Kornelia może teraz rozmawiać.</p>
+          <p class="d u"><span>Rozmówczyni</span>Dzień dobry, Anna, dzwonię w sprawie oferty pracy.</p>
+          <p class="d m"><span>Wanda</span>Dziękuję. Proszę chwilę zaczekać, zapytam Kornelię.</p>
+          <p class="d-cap" style="margin-top:12px">Wypróbuj</p>
+          <p class="d u" style="max-width:100%"><span>Zadzwoń i porozmawiaj z Wandą</span><a href="tel:+48731434800" style="font-size:1.4rem;font-weight:600;text-decoration:none">731 434 800</a></p>
+          <p style="color:#A9A8A4;font-size:0.82rem;line-height:1.4">To mój prywatny numer. Odbiera Wanda, a jeśli sprawa tego wymaga, przełączy rozmowę do mnie, więc możesz trafić bezpośrednio na mnie.</p>
+          </div>
+        </div>
+        <div class="wpanel" aria-label="Panel Wandy">
+          <p class="d-cap">Panel Wandy · zrzuty z telefonu</p>
+          <div class="wshots"><img src="img/wanda-panel-start.jpg" alt="Panel Wandy: budżet, liczba połączeń, przełączone rozmowy i wiadomości" width="380" height="500" loading="lazy"><img src="img/wanda-panel-powitania.jpg" alt="Panel Wandy: edycja powitań" width="380" height="500" loading="lazy"><img src="img/wanda-panel-ustawienia.jpg" alt="Panel Wandy: limity, budżet, model językowy i głos" width="380" height="500" loading="lazy"></div>
+        </div>
+      </div>
+      <h3><b>Wirtualna Wanda</b> <span>/ moja prywatna asystentka głosowa, która odbiera telefony na mój numer. Odsiewa reklamy i boty, a bliskich, kurierów i rekruterów przełącza do mnie albo przyjmuje od nich wiadomość. Działa też w drugą stronę: sama dzwoni do mnie, gdy pojawi się nowe ogłoszenie, które mnie interesuje. Ma własny panel, w którym pilnuję budżetu, przeglądam rozmowy i zmieniam ustawienia bez dotykania kodu. Projekt własny, zaprojektowany i wdrożony od zera, działa na co dzień.</span></h3>
+      <div class="tags"><span>Voicebot</span><span>LiveKit</span><span>Azure Speech</span><span>Panel administracyjny</span><span>Alerty głosowe</span><span>Railway</span><span>Projekt własny</span><span>Działa na żywo</span></div>
     </article>
     <article class="case">
       <div class="vis full" style="background:#F2DCCF"><img src="img/n8n-maile.jpg" alt="Workflow n8n: odpowiedzi na maile" width="1400" height="937" loading="lazy"></div>
